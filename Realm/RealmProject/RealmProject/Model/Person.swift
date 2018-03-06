@@ -6,7 +6,6 @@
 //  Copyright © 2018 Jacky. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
 
 class Person: Object {
