@@ -112,6 +112,7 @@
 		A708B53C217F080700F9155B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A73397E22180699500C9BEF4 /* Other */,
 				A708B54021803D5600F9155B /* Events */,
 				A708B53D217F080D00F9155B /* Cell */,
 			);
@@ -137,6 +138,13 @@
 				A708B54121803FA500F9155B /* CalendarEventRowView.xib */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		A73397E22180699500C9BEF4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		EF91930B9B343C8918412CFD /* Frameworks */ = {

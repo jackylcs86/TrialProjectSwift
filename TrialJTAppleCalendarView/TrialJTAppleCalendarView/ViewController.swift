@@ -19,22 +19,18 @@ struct EventResponse {
     let time: String
     let location: String
     let id: String
+    let type: String
     
-    init(date: Date?, title: String, id: String, subTitle: String = "", time: String = "", location: String = "") {
+    init(date: Date?, title: String, id: String, subTitle: String = "", time: String = "", location: String = "", type: String = "") {
         self.date = date
         self.title = title
         self.subTitle = subTitle
         self.time = time
         self.location = location
         self.id = id
+        self.type = type
     }
 }
-
-//struct EventModel {
-//    let title: String
-//    let id: String
-//    let date: Date
-//}
 
 class ViewController: UIViewController {
     
@@ -163,20 +159,20 @@ class ViewController: UIViewController {
 
     private func createMockEvent() {
         let serverResponse = [
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 01"), title: "Sleeping", id: "1", subTitle: "Sleeping is good for Health"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 01"), title: "Sleeping", id: "1", subTitle: "Sleeping is good for Health", type: "Other"),
             EventResponse(date: self.myDateFormatter.date(from: "ABC 123"), title: "Error Event", id: "404"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 01"), title: "Dota2", id: "2", location: "MacDonald"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 03"), title: "Marvel Strike Force", id: "3"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 13"), title: "Pokemon", id: "4"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 06"), title: "Flappy Bird", id: "5"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 20"), title: "Mobile Legend", id: "6"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 06"), title: "HAHHAHA", id: "7"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 22"), title: "PUBG", id: "8"),
-            EventResponse(date: self.myDateFormatter.date(from: "2018 10 09"), title: "Drinking", id: "9"),
-            EventResponse(date: Date(), title: "Hari Raya", id: "9", subTitle: "Balik kampung"),
-            EventResponse(date: Date(), title: "Hari Raya", id: "9", location: "Petaling Jaya"),
-            EventResponse(date: Date(), title: "Lunch Time", id: "9", time: "12:00pm - 3:00pm"),
-            EventResponse(date: Date(), title: "Hari Raya", id: "9", subTitle: "Balik kampung", time: "12:00pm - 3:00pm", location: "Petaling Jaya")
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 01"), title: "Dota2", id: "2", location: "MacDonald", type: "Personal"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 03"), title: "Marvel Strike Force", id: "3", type: "Sales"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 13"), title: "Pokemon", id: "4", type: "Training"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 06"), title: "Flappy Bird", id: "5", type: "Sales"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 20"), title: "Mobile Legend", id: "6", type: "Recruit"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 06"), title: "HAHHAHA", id: "7", type: "Service"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 22"), title: "PUBG", id: "8", type: "Event"),
+            EventResponse(date: self.myDateFormatter.date(from: "2018 10 09"), title: "Drinking", id: "9", type: "Training"),
+            EventResponse(date: Date(), title: "Hari Raya", id: "9", subTitle: "Balik kampung", type: "Training"),
+            EventResponse(date: Date(), title: "Hari Raya", id: "9", location: "Petaling Jaya", type: "Service"),
+            EventResponse(date: Date(), title: "Lunch Time", id: "9", time: "12:00pm - 3:00pm", type: "Recruit"),
+            EventResponse(date: Date(), title: "Hari Raya", id: "9", subTitle: "Balik kampung", time: "12:00pm - 3:00pm", location: "Petaling Jaya", type: "Sales")
         ]
         
         var temp: [String: [CalendarEventRowViewModel]] = [:]
