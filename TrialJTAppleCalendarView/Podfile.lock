@@ -1,0 +1,28 @@
+PODS:
+  - JTAppleCalendar (7.1.6)
+  - NibDesignable (3.0.2)
+
+DEPENDENCIES:
+  - JTAppleCalendar (~> 7.0)
+  - NibDesignable (from `https://github.com/wei2lee/NibDesignable.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JTAppleCalendar
+
+EXTERNAL SOURCES:
+  NibDesignable:
+    :git: https://github.com/wei2lee/NibDesignable.git
+
+CHECKOUT OPTIONS:
+  NibDesignable:
+    :commit: f9e407ef912cb7e1c07c37bcfda9cb270a7e0c94
+    :git: https://github.com/wei2lee/NibDesignable.git
+
+SPEC CHECKSUMS:
+  JTAppleCalendar: abb30678f42a4ef8a340a932b1dcb8c85a33dac2
+  NibDesignable: abfbbba04b69de75b2d8051a1cc9385f5ea660bb
+
+PODFILE CHECKSUM: ab425e844229bbad8742b62324275e31e77f45a0
+
+COCOAPODS: 1.5.3
