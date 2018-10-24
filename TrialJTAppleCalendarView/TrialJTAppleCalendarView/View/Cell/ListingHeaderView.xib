@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AIAEverest-Regular.ttf">
+            <string>AIAEverestRegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ListingHeaderView" customModule="TrialJTAppleCalendarView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veW-em-BPz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0 policies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DQc-re-JyU">
+                            <rect key="frame" x="10" y="10" width="355" height="20"/>
+                            <fontDescription key="fontDescription" name="AIAEverestRegular" family="AIA Everest" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DQc-re-JyU" secondAttribute="trailing" constant="10" id="8SB-h4-ST5"/>
+                        <constraint firstAttribute="bottom" secondItem="DQc-re-JyU" secondAttribute="bottom" constant="10" id="ZDb-Xa-iOa"/>
+                        <constraint firstItem="DQc-re-JyU" firstAttribute="leading" secondItem="veW-em-BPz" secondAttribute="leading" constant="10" id="ZQy-RK-Ax6"/>
+                        <constraint firstItem="DQc-re-JyU" firstAttribute="top" secondItem="veW-em-BPz" secondAttribute="top" constant="10" id="gm4-YW-EhP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="veW-em-BPz" secondAttribute="trailing" id="Ey8-zS-hCI"/>
+                <constraint firstItem="veW-em-BPz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IJw-me-r0g"/>
+                <constraint firstAttribute="bottom" secondItem="veW-em-BPz" secondAttribute="bottom" id="k05-jo-3Qa"/>
+                <constraint firstItem="veW-em-BPz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qZk-W4-Vug"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bgView" destination="veW-em-BPz" id="Yqv-Sc-M4n"/>
+                <outlet property="titleLabel" destination="DQc-re-JyU" id="zVA-Wk-BN7"/>
+            </connections>
+            <point key="canvasLocation" x="66.5" y="54"/>
+        </view>
+    </objects>
+</document>
