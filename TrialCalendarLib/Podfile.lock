@@ -1,0 +1,36 @@
+PODS:
+  - CalendarLib (2.0):
+    - OrderedDictionary (~> 1.2)
+    - OSCache (~> 1.2)
+  - NibDesignable (3.0.2)
+  - OrderedDictionary (1.4)
+  - OSCache (1.2.1)
+
+DEPENDENCIES:
+  - CalendarLib
+  - NibDesignable (from `https://github.com/wei2lee/NibDesignable.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CalendarLib
+    - OrderedDictionary
+    - OSCache
+
+EXTERNAL SOURCES:
+  NibDesignable:
+    :git: https://github.com/wei2lee/NibDesignable.git
+
+CHECKOUT OPTIONS:
+  NibDesignable:
+    :commit: f9e407ef912cb7e1c07c37bcfda9cb270a7e0c94
+    :git: https://github.com/wei2lee/NibDesignable.git
+
+SPEC CHECKSUMS:
+  CalendarLib: 040a8a655376581d8dc7c3c63196ddcf5223f471
+  NibDesignable: abfbbba04b69de75b2d8051a1cc9385f5ea660bb
+  OrderedDictionary: 138c8d2e358d3a0c9adda15c6c7db24e8e3b09e6
+  OSCache: 826996b68e8542a8a3d8af1ab0a0fc3070d8f357
+
+PODFILE CHECKSUM: f179248ca78b9d7fe272c9f12fefca192968f945
+
+COCOAPODS: 1.5.3
