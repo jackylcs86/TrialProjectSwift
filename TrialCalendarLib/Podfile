@@ -5,7 +5,7 @@ target 'TrialCalendarLib' do
     
     use_frameworks!
     
-    pod 'CalendarLib'
+    pod 'CalendarLib', :git => 'https://github.com/wei2lee/Calendar.git'
     pod 'NibDesignable', :git => 'https://github.com/wei2lee/NibDesignable.git'
     
     

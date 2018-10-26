@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         self.yearViewController.moveToNextPageAnimated(animated: true)
     }
     
+    fileprivate var yearViewControllers: [YearViewController] = []
     fileprivate var yearViewController: YearViewController!
     fileprivate var embededPageViewController: UIPageViewController!
     fileprivate var dateFormatter: DateFormatter?
@@ -60,20 +61,27 @@ class ViewController: UIViewController {
         self.embededPageViewController.delegate = self
         self.embededPageViewController.dataSource = self
         
-        let currentYear = 2018
-        self.yearLabel.text = "\(currentYear)"
-        
-        if let initialViewController = self.storyboard?.instantiateViewController(withIdentifier: "YearVC") as? YearViewController {
-            initialViewController.dateRange = MGCDateRange(start: self.getStart(date: currentYear), end: self.getEnd(date: currentYear))
-            initialViewController.currentDate = currentYear
-            initialViewController.delegate = self
-            self.embededPageViewController.setViewControllers([initialViewController], direction: UIPageViewController.NavigationDirection.forward, animated: false, completion: nil)
-        }
+        self.yearViewControllers = (minYear...maxYear).map { self.genarateYearViewControllers(year: $0) ?? YearViewController() }
+        let yearVC = self.getYearViewControllerFor(year: 2018)
+        self.embededPageViewController.setViewControllers([yearVC], direction: UIPageViewController.NavigationDirection.forward, animated: false, completion: nil)
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let pageViewController = segue.destination as? UIPageViewController else { return }
         self.embededPageViewController = pageViewController
+    }
+    
+    fileprivate func genarateYearViewControllers(year: Int) -> YearViewController? {
+        let yearViewController = self.storyboard?.instantiateViewController(withIdentifier: "YearVC") as? YearViewController
+        yearViewController?.dateRange = MGCDateRange(start: self.getStart(date: year), end: self.getEnd(date: year))
+        yearViewController?.currentDate = year
+        yearViewController?.delegate = self
+        return yearViewController
+    }
+    
+    fileprivate func getYearViewControllerFor(year: Int) -> YearViewController {
+        return self.yearViewControllers.filter { $0.currentDate == year }.first ?? YearViewController()
     }
 }
 
@@ -101,11 +109,7 @@ extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDe
         let previousYear = vcBefore.currentDate - 1
         
         if previousYear > self.minYear {
-            let initialViewController = self.storyboard?.instantiateViewController(withIdentifier: "YearVC") as? YearViewController
-            initialViewController?.dateRange = MGCDateRange(start: self.getStart(date: previousYear), end: self.getEnd(date: previousYear))
-            initialViewController?.currentDate = previousYear
-            initialViewController?.delegate = self
-            return initialViewController
+            return self.getYearViewControllerFor(year: previousYear)
         }
         return nil
     }
@@ -115,11 +119,7 @@ extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDe
         let nextYear = vcAfter.currentDate + 1
         
         if nextYear < self.maxYear {
-            let initialViewController = self.storyboard?.instantiateViewController(withIdentifier: "YearVC") as? YearViewController
-            initialViewController?.dateRange = MGCDateRange(start: self.getStart(date: nextYear), end: self.getEnd(date: nextYear))
-            initialViewController?.currentDate = nextYear
-            initialViewController?.delegate = self
-            return initialViewController
+            return self.getYearViewControllerFor(year: nextYear)
         }
         return nil
     }
