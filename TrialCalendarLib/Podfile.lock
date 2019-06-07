@@ -1,5 +1,5 @@
 PODS:
-  - CalendarLib (2.04):
+  - CalendarLib (2.05):
     - OrderedDictionary (~> 1.2)
     - OSCache (~> 1.2)
   - NibDesignable (3.0.2)
@@ -23,14 +23,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CalendarLib:
-    :commit: 82ca0372e24acd76f9d3dfc21a4b696700eabf46
+    :commit: 609eeb2a75c5a6b0acf3cc0d217e4fb982ee99e2
     :git: https://github.com/wei2lee/Calendar.git
   NibDesignable:
     :commit: f9e407ef912cb7e1c07c37bcfda9cb270a7e0c94
     :git: https://github.com/wei2lee/NibDesignable.git
 
 SPEC CHECKSUMS:
-  CalendarLib: f50ac0f91bde47bbd6d1ef0b8e729c2d1d5c21b4
+  CalendarLib: 318dff66989ab8dceb43bcc8fa1059400126d1a4
   NibDesignable: abfbbba04b69de75b2d8051a1cc9385f5ea660bb
   OrderedDictionary: 138c8d2e358d3a0c9adda15c6c7db24e8e3b09e6
   OSCache: 826996b68e8542a8a3d8af1ab0a0fc3070d8f357

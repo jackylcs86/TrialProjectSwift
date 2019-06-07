@@ -144,7 +144,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Puj-4Q-3s3" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxj-IO-Kee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="27"/>
+            <point key="canvasLocation" x="839" y="27"/>
         </scene>
         <!--Fake View Controller-->
         <scene sceneID="5D5-Y7-omj">
