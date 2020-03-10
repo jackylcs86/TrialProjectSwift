@@ -1,0 +1,14 @@
+{
+	"Response": 
+	{
+    	"Bar": true,
+    	"Baz": "Hello, World!",
+        "Time": "2018-09-15T15:53:00Z",
+    	"Friends": 
+    	{
+        	"Best": "Nic",
+        	"FunnyGuy": "Gabe",
+        	"FavoriteWeirdo": "Jer"
+        }
+    }
+}
