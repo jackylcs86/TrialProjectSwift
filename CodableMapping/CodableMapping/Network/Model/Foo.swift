@@ -8,23 +8,38 @@
 import UIKit
 import SwiftDate
 
+struct Friend: Codable {
+    let bestFriend: String
+    let funnyGuy: String
+    let favoriteWeirdo: String
+    
+    enum CodingKeys: String, CodingKey {
+        case bestFriend = "Best"
+        case funnyGuy = "FunnyGuy"
+        case favoriteWeirdo = "FavoriteWeirdo"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        bestFriend = try container.decode(String.self, forKey: .bestFriend)
+        funnyGuy = try container.decode(String.self, forKey: .funnyGuy)
+        favoriteWeirdo = try container.decode(String.self, forKey: .favoriteWeirdo)
+    }
+
+}
+
 struct Foo: Codable {
     let bar: Bool
     let baz: String
     let time: DateInRegion
-    let bestFriend: String
-    let funnyGuy: String
-    let favoriteWeirdo: String
-
+    let friends: Friend
+    
     enum CodingKeys: String, CodingKey {
         case response = "Response"
         case bar = "Bar"
         case baz = "Baz"
         case time = "Time"
         case friends = "Friends"
-        case bestFriend = "Best"
-        case funnyGuy = "FunnyGuy"
-        case favoriteWeirdo = "FavoriteWeirdo"
     }
 
     
@@ -37,10 +52,8 @@ struct Foo: Codable {
         baz = try response.decode(String.self, forKey: .baz)
         time = try response.decode(.time, transformer: StringDateInRegionTransformer.iso8601s)
         
-        let friends = try response.nestedContainer(keyedBy: CodingKeys.self, forKey: .friends)
-        bestFriend = try friends.decode(String.self, forKey: .bestFriend)
-        funnyGuy = try friends.decode(String.self, forKey: .funnyGuy)
-        favoriteWeirdo = try friends.decode(String.self, forKey: .favoriteWeirdo)
+        friends = try response.decode(Friend.self, forKey: .friends)
+            //try response.nestedContainer(keyedBy: CodingKeys.self, forKey: .friends)
         
     }
     
@@ -52,10 +65,12 @@ struct Foo: Codable {
         try response.encode(bar, forKey: .bar)
         try response.encode(baz, forKey: .baz)
         try response.encode(time, forKey: .time, transformer: StringDateInRegionTransformer.iso8601s)
+        try response.encode(friends, forKey: .friends)
         
-        var friends = response.nestedContainer(keyedBy: CodingKeys.self, forKey: .friends)
-        try friends.encode(bestFriend, forKey: .bestFriend)
-        try friends.encode(funnyGuy, forKey: .funnyGuy)
-        try friends.encode(favoriteWeirdo, forKey: .favoriteWeirdo)
+//        var friends = response.nestedContainer(keyedBy: CodingKeys.self, forKey: .friends)
+//        try friends.encode(bestFriend, forKey: .bestFriend)
+//        try friends.encode(funnyGuy, forKey: .funnyGuy)
+//        try friends.encode(favoriteWeirdo, forKey: .favoriteWeirdo)
+        
     }
 }
